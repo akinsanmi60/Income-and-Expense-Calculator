@@ -1,5 +1,8 @@
 import React from "react";
 import CashCard from "./cashCard";
+import incomeImg from "../../assets/Savings-pana.svg";
+import expenseImg from "../../assets/Manage money-bro.svg";
+import calculatorImg from "../../assets/Calculator-bro.svg";
 
 type WidgetProp = {
   income: number;
@@ -10,21 +13,13 @@ type WidgetProp = {
 function Widget({ income, expense, total }: WidgetProp) {
   return (
     <div className="flex gap-3 justify-between xlsm:flex-wrap">
-      <CashCard
-        cardTitle="Income"
-        cardIcon="/src/assets/Savings-pana.svg"
-        cardAmount={income}
-      />
+      <CashCard cardTitle="Income" cardIcon={incomeImg} cardAmount={income} />
       <CashCard
         cardTitle="Expenses"
-        cardIcon="/src/assets/Manage money-bro.svg"
+        cardIcon={expenseImg}
         cardAmount={expense}
       />
-      <CashCard
-        cardTitle="Total"
-        cardIcon="/src/assets/Calculator-bro.svg"
-        cardAmount={total}
-      />
+      <CashCard cardTitle="Total" cardIcon={calculatorImg} cardAmount={total} />
     </div>
   );
 }
